@@ -1,0 +1,70 @@
+@import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixins.scss";
+
+//Top Bar component
+
+.top-bar {
+    @include flex;
+}
+
+.top-bar__link {
+    @include flex;
+    gap: 6px;
+
+    padding: 6px 6px 6px 8px;
+
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+
+    color: $text-info;
+
+    cursor: pointer;
+}
+
+.top-bar__title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.18px;
+}
+
+.top-bar__toggle-wrapper {
+    @include flex;
+    gap: 12px;
+}
+
+.top-bar__toggle-text {
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+
+
+}
+
+
+::ng-deep .mdc-switch__icon {
+    &--off {
+        display: none;
+
+    }
+
+    &--on {
+        display: none;
+    }
+}
+
+::ng-deep .mat-mdc-slide-toggle .mdc-switch__shadow {
+    background-color: $secondary;
+}
+
+::ng-deep .mat-mdc-slide-toggle-checked .mdc-switch__shadow {
+    background-color: $primary;
+}
+
+//Form Wrapper 
+
+.form-wrapper {
+    box-shadow: $box-shadow;
+}

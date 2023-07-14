@@ -1,0 +1,47 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.letters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+}
+
+.letter-card {
+    width: 258px;
+    height: 128px;
+    padding: 14px 16px 16px 16px;
+
+    box-shadow: $box-shadow;
+
+    cursor: pointer;
+}
+
+.letter-card__title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+
+    margin-bottom: 2px;
+}
+
+.letter-card__receiver {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+
+    color: rgba(0, 0, 0, 0.87);
+
+    margin-bottom: 28px;
+}
+
+
+.letter-card__subject {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+
+    color: rgba(0, 0, 0, 0.6);
+}

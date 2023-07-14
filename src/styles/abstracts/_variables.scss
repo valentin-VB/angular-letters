@@ -1,0 +1,18 @@
+// Colors
+$primary: rgba(25, 118, 210, 1);
+$secondary: rgba(255, 255, 255, 1);
+$danger: #dc3545;
+
+// Background colors
+$bg-primary: $secondary;
+
+
+// Text colors
+$text-primary: rgba(0, 0, 0, 1);
+$text-secondary: rgba(0, 0, 0, 0.87);
+$text-third: rgba(0, 0, 0, 0.6);
+$text-info: rgba(38, 50, 56, 1); //back link color
+$text-danger: $danger;
+
+// box-shadow
+$box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.20), 0px 3px 1px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.14);

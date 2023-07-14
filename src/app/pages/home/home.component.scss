@@ -1,0 +1,21 @@
+@import "src/styles/abstracts/_mixins.scss";
+
+.top-bar {
+    @include flex;
+    margin-bottom: 38px;
+}
+
+.tob-bar__title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.18px;
+}
+
+
+.letters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+}
