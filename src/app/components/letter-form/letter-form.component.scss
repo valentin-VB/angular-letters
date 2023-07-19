@@ -9,7 +9,7 @@
 .form {
     padding-left: 63px;
     padding-right: 64px;
-    padding: 28px 63px 64px 61px;
+    padding: 28px 63px 61px 61px;
 }
 
 .logo {
@@ -23,7 +23,8 @@
     margin-bottom: 81px;
 }
 
-.form__address-block-field {
+.form__address-block-field,
+.form__body-block-field {
     width: 100%;
 }
 
@@ -35,7 +36,20 @@
     }
 }
 
+.form__body-block-field:not(:last-child) {
+    margin-bottom: 9px;
+}
 
-.form__address-block-textarea {
-    resize: none;
+
+.form__body-block-textarea {
+    height: auto;
+}
+
+
+::ng-deep .form__address-block .mat-mdc-form-field-subscript-wrapper {
+    height: 18px;
+}
+
+::ng-deep .form__body-block .mat-mdc-form-field-subscript-wrapper {
+    height: 17px;
 }

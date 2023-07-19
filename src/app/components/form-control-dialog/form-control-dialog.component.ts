@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DialogData, FormModel } from 'src/app/shared/types';
 
@@ -26,12 +26,16 @@ export class FormControlDialogComponent {
       values: new FormArray([]),
     });
     for (const value of this.values) {
-      this.form.controls.values.push(new FormControl(value));
+      this.form.controls.values.push(
+        new FormControl(value, [Validators.required, Validators.maxLength(40)])
+      );
     }
   }
 
   addLine() {
-    this.form.controls.values.push(new FormControl(''));
+    this.form.controls.values.push(
+      new FormControl('', [Validators.required, Validators.maxLength(40)])
+    );
   }
 
   removeLine(index: number) {
@@ -43,6 +47,10 @@ export class FormControlDialogComponent {
   }
 
   onApply() {
-    this.dialogRef.close(this.form.value.values);
+    if (this.form.valid) {
+      this.dialogRef.close(this.form.value.values);
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
 }

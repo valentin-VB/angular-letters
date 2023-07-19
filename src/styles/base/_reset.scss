@@ -39,3 +39,9 @@ a {
     display: block;
     text-decoration: none;
 }
+
+p,
+span {
+    word-wrap: break-word;
+    max-width: 100%;
+}

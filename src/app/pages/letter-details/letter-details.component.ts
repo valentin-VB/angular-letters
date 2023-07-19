@@ -39,7 +39,9 @@ export class LetterDetailsComponent {
   getLetterIndex() {
     const letterId = this.getIdFromRouteParams();
     const index = this.letterService.getLetterIndexById(letterId);
-    if (index >= 0) this.letterIndex = index;
+    index >= 0
+      ? (this.letterIndex = index)
+      : (this.letterIndex = this.letterService.getLetters().length);
   }
 
   getLetter() {

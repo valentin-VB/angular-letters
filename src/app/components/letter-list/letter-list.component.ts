@@ -14,4 +14,9 @@ export class LetterListComponent {
   ngOnInit(): void {
     this.letters = this.letterService.getLetters();
   }
+
+  onDelete(event: Event, id: string) {
+    event.stopPropagation();
+    this.letterService.deleteLetter(id);
+  }
 }

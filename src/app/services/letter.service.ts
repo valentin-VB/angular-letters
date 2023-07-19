@@ -3,27 +3,6 @@ import { Letter } from '../shared/types';
 import { BehaviorSubject, skip } from 'rxjs';
 import { generateUUID } from '../shared/utils';
 
-const mockData = [
-  {
-    id: '1',
-    senderAddress: 'Hanau, Limmesstrasse 4e, 63450',
-    receiverAddress: ['fef', 'kiuky', 'ytr'],
-    blockA: ['fef', 'kiuky', 'ytr'],
-    subject: 'letter',
-    body: 'how are you',
-    footNote: 'ffre',
-  },
-  {
-    id: '2',
-    senderAddress: 'Kyiv',
-    receiverAddress: ['fef', 'kiuky', 'ytr'],
-    blockA: ['fef', 'kiuky', 'ytr'],
-    subject: 'letter',
-    body: 'how are you',
-    footNote: 'ffre',
-  },
-];
-
 @Injectable({
   providedIn: 'root',
 })
@@ -33,14 +12,13 @@ export class LetterService {
   constructor() {
     this.letters$ = new BehaviorSubject<Letter[]>(this.loadDataFromStorage());
     this.letters$.pipe(skip(1)).subscribe((data) => {
-      console.log('Data persist');
       this.saveDataToStorage(data);
     });
   }
 
   loadDataFromStorage(): Letter[] {
     const data = localStorage.getItem(LetterService.LOCAL_STORAGE_KEY);
-    return data ? JSON.parse(data) : mockData;
+    return data ? JSON.parse(data) : [];
   }
 
   saveDataToStorage(data: Letter[]) {
@@ -70,5 +48,12 @@ export class LetterService {
       editing.id === letter.id ? editing : letter
     );
     this.letters$.next(updatedLetters);
+  }
+
+  deleteLetter(letterId: string) {
+    const filteredLetters = this.letters$.value.filter(
+      ({ id }) => id !== letterId
+    );
+    this.letters$.next(filteredLetters);
   }
 }

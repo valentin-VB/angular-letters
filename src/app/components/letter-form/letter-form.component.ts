@@ -26,12 +26,18 @@ export class LetterFormComponent {
     } = this.letter || {};
 
     this.form = new FormGroup({
-      senderAddress: new FormControl(senderAddress, [Validators.required]),
-      subject: new FormControl(subject),
+      senderAddress: new FormControl(senderAddress, [
+        Validators.required,
+        Validators.maxLength(500),
+      ]),
+      subject: new FormControl(subject, [Validators.maxLength(100)]),
       receiverAddress: new FormControl(receiverAddress),
       blockA: new FormControl(blockA),
-      body: new FormControl(body, [Validators.required]),
-      footNote: new FormControl(footNote),
+      body: new FormControl(body, [
+        Validators.required,
+        Validators.maxLength(500),
+      ]),
+      footNote: new FormControl(footNote, [Validators.maxLength(100)]),
     });
   }
 

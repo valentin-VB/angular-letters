@@ -1,9 +1,21 @@
 <ul class="letters">
-    <ng-container *ngFor="let letter of letters; let i = index">
-        <li class="letter-card mat-elevation-z2" [routerLink]="'letter/' + letter.id">
-            <h2 class="letter-card__title">Letter {{i + 1}}</h2>
-            <p class="letter-card__receiver">{{letter.receiverAddress}}</p>
-            <p class="letter-card__subject">{{letter.subject}}</p>
-        </li>
-    </ng-container>
+  <ng-container *ngFor="let letter of letters; let i = index">
+    <li
+      class="letter-card mat-elevation-z2"
+      [routerLink]="'letter/' + letter.id"
+    >
+      <div class="letter-card__title-wrapper">
+        <h2 class="letter-card__title">Letter {{ i + 1 }}</h2>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="onDelete($event, letter.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <p class="letter-card__receiver">{{ letter.receiverAddress }}</p>
+      <p class="letter-card__subject">{{ letter.subject }}</p>
+    </li>
+  </ng-container>
 </ul>

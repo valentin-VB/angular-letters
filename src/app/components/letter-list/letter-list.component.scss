@@ -1,18 +1,24 @@
 @import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixins.scss";
 
 .letters {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-
 }
+
+
 
 .letter-card {
     width: 258px;
     height: 128px;
-    padding: 14px 16px 16px 16px;
+    padding: 5px 16px 16px 16px;
 
     cursor: pointer;
+}
+
+.letter-card__title-wrapper {
+    @include flex;
 }
 
 .letter-card__title {
@@ -24,6 +30,14 @@
     margin-bottom: 2px;
 }
 
+
+.letter-card__receiver,
+.letter-card__subject {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .letter-card__receiver {
     font-size: 14px;
     line-height: 20px;
@@ -31,7 +45,8 @@
 
     color: rgba(0, 0, 0, 0.87);
 
-    margin-bottom: 28px;
+    margin-bottom: 14px;
+
 }
 
 
