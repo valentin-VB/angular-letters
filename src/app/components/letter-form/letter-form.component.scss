@@ -1,0 +1,41 @@
+.form-wrapper {
+    width: 81%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 61px;
+}
+
+.form {
+    padding-left: 63px;
+    padding-right: 64px;
+    padding: 28px 63px 64px 61px;
+}
+
+.logo {
+    display: flex;
+    margin-left: auto;
+    padding-right: 80px;
+}
+
+.form__address-block {
+    width: 64%;
+    margin-bottom: 81px;
+}
+
+.form__address-block-field {
+    width: 100%;
+}
+
+
+.form__control-wrapper {
+    app-letter-form-control:first-child {
+        display: block;
+        margin-bottom: 16px;
+    }
+}
+
+
+.form__address-block-textarea {
+    resize: none;
+}

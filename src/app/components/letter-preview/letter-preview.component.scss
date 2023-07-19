@@ -1,0 +1,44 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.letter {
+    padding: 39px 81px 60px 81px;
+    width: 100%;
+}
+
+.letter__sender-address {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    text-decoration: underline;
+
+    margin-bottom: 22px;
+
+    color: $text-primary;
+}
+
+.letter__receiver-address-wrapper {
+    margin-bottom: 68px;
+}
+
+.letter__sender-info {
+    margin-bottom: 72px;
+}
+
+.letter__subject {
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+
+    margin-bottom: 11px;
+
+    word-wrap: break-word;
+
+}
+
+.letter__body {
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    word-wrap: break-word;
+
+    margin-bottom: 35px;
+}

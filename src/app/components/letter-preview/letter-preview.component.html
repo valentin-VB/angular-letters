@@ -1,1 +1,18 @@
-<p>letter-preview works!</p>
+<div class="letter" #div (window:resize)="0" [ngStyle]="{'height.px': (div.offsetWidth * 1.41) }">
+    <a class="letter__sender-address" [href]="getMapsLink()" target="_blank">
+        <p>{{letter.senderAddress}}</p>
+    </a>
+    <div class="letter__receiver-address-wrapper">
+        <ng-container *ngFor="let value of letter.receiverAddress">
+          <p>{{value}}</p>
+        </ng-container> 
+    </div>
+    <div class="letter__sender-info">
+        <ng-container *ngFor="let value of letter.blockA">
+            <p>{{ value }}</p>
+        </ng-container>
+    </div>
+    <p class="letter__subject">{{letter.subject}}</p>
+    <p class="letter__body">{{letter.body}}</p>
+    <p>{{letter.footNote}}</p>
+</div>

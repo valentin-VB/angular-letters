@@ -1,0 +1,82 @@
+@import "src/styles/abstracts/_mixins.scss";
+@import "src/styles/abstracts/_variables.scss";
+
+.dialog {
+    width: 560px;
+    padding: 21px 21px 8px 24px;
+
+}
+
+.tob-bar {
+    @include flex;
+    margin-bottom: 27px;
+}
+
+.top-bar__title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+.top-bar__btn {
+    color: $text-primary;
+}
+
+.form {
+    div:not(:last-child) {
+        margin-bottom: 27px;
+    }
+
+    div:last-child {
+        margin-bottom: 8px;
+    }
+}
+
+.form__input-wrapper {
+    @include flex;
+    gap: 12px
+}
+
+.form__input {
+    width: 100%;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+    margin-bottom: -22px;
+}
+
+::ng-deep .mdc-button__label {
+    @include flex;
+    gap: 6px;
+}
+
+
+.preview__top-divider {
+    margin: 8px -16px 16px -16px;
+}
+
+.preview__title {
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+
+    margin-bottom: 16px;
+}
+
+.preview__item {
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.preview__bottom-divider {
+    margin: 36px -21px 8px -24px;
+}
+
+.preview__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+
+    margin-right: -13px;
+}

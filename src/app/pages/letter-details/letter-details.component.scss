@@ -2,9 +2,9 @@
 @import "src/styles/abstracts/_mixins.scss";
 
 //Top Bar component
-
 .top-bar {
     @include flex;
+    margin-bottom: 31px;
 }
 
 .top-bar__link {
@@ -28,11 +28,15 @@
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.18px;
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .top-bar__toggle-wrapper {
     @include flex;
     gap: 12px;
+    margin-right: 100px;
 }
 
 .top-bar__toggle-text {
@@ -61,10 +65,4 @@
 
 ::ng-deep .mat-mdc-slide-toggle-checked .mdc-switch__shadow {
     background-color: $primary;
-}
-
-//Form Wrapper 
-
-.form-wrapper {
-    box-shadow: $box-shadow;
 }

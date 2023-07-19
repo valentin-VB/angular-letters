@@ -1,1 +1,42 @@
-<p>letter-form works!</p>
+<div class="form-wrapper mat-elevation-z2">
+    <img src="../../../assets/W-AYS Logo.png" alt="W-AYS Logo" class="logo">
+    <ng-container *ngIf="!isPreview">
+        <form class="form" [formGroup]="form" (submit)="onSubmit()">
+            <div class="form__address-block">
+                <mat-form-field appearance="outline" class="form__address-block-field">
+                    <mat-label>Sender address</mat-label>
+                    <input matInput type="text" formControlName="senderAddress">
+                    <mat-error *ngIf="form.get('senderAddress').invalid && form.get('senderAddress').touched">
+                        Sender address is required.
+                    </mat-error>
+                </mat-form-field>
+                <div class="form__control-wrapper">
+                    <app-letter-form-control formControlName="receiverAddress" placeholder="Receiver address" />
+                    <app-letter-form-control formControlName="blockA" placeholder="Block A" />
+                </div>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="form__address-block-field">
+                    <mat-label>Subject (optional)</mat-label>
+                    <input matInput type="text" formControlName="subject">
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form__address-block-field">
+                    <mat-label>Body</mat-label>
+                    <textarea class="form__address-block-textarea" matInput type="text" formControlName="body"
+                        rows="1"></textarea>
+                    <mat-error *ngIf="form.get('body').invalid && form.get('body').touched">
+                        Letter body address is required.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form__address-block-field">
+                    <mat-label>Footnote (optional)</mat-label>
+                    <input matInput type="text" formControlName="footNote">
+                </mat-form-field>
+            </div>
+        </form>
+    </ng-container>
+    <ng-container *ngIf="isPreview">
+        <app-letter-preview [letter]="buildLetter()" />
+    </ng-container>
+
+</div>

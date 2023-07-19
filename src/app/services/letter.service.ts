@@ -6,7 +6,7 @@ import { generateUUID } from '../shared/utils';
 const mockData = [
   {
     id: '1',
-    senderAddress: 'Rivne',
+    senderAddress: 'Hanau, Limmesstrasse 4e, 63450',
     receiverAddress: ['fef', 'kiuky', 'ytr'],
     blockA: ['fef', 'kiuky', 'ytr'],
     subject: 'letter',

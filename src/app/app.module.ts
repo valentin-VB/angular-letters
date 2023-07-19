@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { HomeComponent } from './pages/home/home.component';
 import { LetterDetailsComponent } from './pages/letter-details/letter-details.component';
@@ -34,6 +39,12 @@ import { LetterListComponent } from './components/letter-list/letter-list.compon
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatInputModule,
+    FormsModule,
+    MatDialogModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

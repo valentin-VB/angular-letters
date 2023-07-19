@@ -1,0 +1,31 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.form-control__title {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+
+    color: $text-third;
+
+    padding-left: 14px;
+}
+
+.form-control__wrapper {
+    min-height: 54px;
+
+    padding: 10px 14px 10px 14px;
+
+    border-radius: 4px;
+    border: 1px dashed #666;
+
+    cursor: pointer;
+
+}
+
+.form-control__value {
+    display: block;
+
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}

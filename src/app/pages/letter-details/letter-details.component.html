@@ -1,3 +1,5 @@
+<!-- Tob Bar ////////////////////////////////////////// -->
+
 <div class="top-bar">
     <a routerLink="/" class="top-bar__link">
         <mat-icon>arrow_back</mat-icon>
@@ -5,9 +7,9 @@
     </a>
     <h1 class="top-bar__title">Letter {{letterIndex + 1}}</h1>
     <div class="top-bar__toggle-wrapper">
-        <mat-slide-toggle ></mat-slide-toggle>
+        <mat-slide-toggle color="primary" [checked]="isPreview" (change)="isPreview = $event.checked"></mat-slide-toggle>
         <span class="top-bar__toggle-text">Preview Mode</span>
     </div>
-    <button mat-raised-button [routerLink]="'letter'" id="top-bar__button">Save</button>
-</div>  
-<div class="form-wrapper"></div>
+    <button mat-raised-button id="top-bar__button" color="primary" (click)="form.onSubmit()">Save</button>
+</div>
+<app-letter-form #form [letter]="letter" [isPreview]="isPreview" (formSubmit)="onFormSubmit($event)"/>
