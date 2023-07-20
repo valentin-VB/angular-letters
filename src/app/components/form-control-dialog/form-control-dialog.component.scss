@@ -49,6 +49,10 @@
     width: 100%;
 }
 
+.form__delete-btn {
+    color: $danger;
+}
+
 .form__error {
     text-align: right;
 }

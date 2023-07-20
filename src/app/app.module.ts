@@ -21,6 +21,7 @@ import { LetterFormControlComponent } from './components/letter-form-control/let
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LetterListComponent } from './components/letter-list/letter-list.component';
 import { LetterService } from './services/letter.service';
+import { DeleteConfirmDialogComponent } from './components/delete-confirm-dialog/delete-confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { LetterService } from './services/letter.service';
     FormControlDialogComponent,
     LetterPreviewComponent,
     LetterListComponent,
+    DeleteConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,

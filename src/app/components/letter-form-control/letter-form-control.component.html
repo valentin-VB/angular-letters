@@ -1,11 +1,10 @@
 <div class="form-control" (click)="openDialog()">
-    <span class="form-control__title">{{placeholder}}</span>
-    <div class="form-control__wrapper">
-        <ng-container *ngFor="let value of values">
-            <span class="form-control__value">
-                {{value}}
-            </span>
-        </ng-container>
-
-    </div>
+  <span class="form-control__title">{{ placeholder }}</span>
+  <div class="form-control__wrapper">
+    <ng-container *ngFor="let value of values">
+      <span class="form-control__value">
+        {{ value }}
+      </span>
+    </ng-container>
+  </div>
 </div>

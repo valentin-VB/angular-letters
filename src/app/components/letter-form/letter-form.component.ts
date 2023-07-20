@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Letter } from 'src/app/shared/types';
 
@@ -7,7 +7,7 @@ import { Letter } from 'src/app/shared/types';
   templateUrl: './letter-form.component.html',
   styleUrls: ['./letter-form.component.scss'],
 })
-export class LetterFormComponent {
+export class LetterFormComponent implements OnInit {
   @Input() letter: Letter;
   @Input() isPreview: boolean;
   @Output() formSubmit: EventEmitter<Letter> = new EventEmitter<Letter>();
@@ -54,7 +54,7 @@ export class LetterFormComponent {
     }
   }
 
-  buildLetter() {
+  getLetter() {
     return this.form.value;
   }
 }

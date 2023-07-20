@@ -11,7 +11,9 @@
           color="warn"
           (click)="onDelete($event, letter.id)"
         >
-          <mat-icon>delete</mat-icon>
+          <mat-icon class="letter-card__delete-btn material-icons-outlined"
+            >delete_forever</mat-icon
+          >
         </button>
       </div>
       <p class="letter-card__receiver">{{ letter.receiverAddress }}</p>
