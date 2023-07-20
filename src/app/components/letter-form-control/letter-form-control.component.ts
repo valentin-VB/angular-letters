@@ -24,7 +24,6 @@ export class LetterFormControlComponent implements ControlValueAccessor {
   constructor(private dialog: MatDialog) {}
 
   writeValue(values: string[]): void {
-    console.log('values:', values);
     this.values = values;
   }
 

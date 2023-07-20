@@ -31,13 +31,14 @@
 
     margin-bottom: 11px;
 
-  
+
 
 }
 
 .letter__body {
     line-height: 20px;
     letter-spacing: 0.25px;
-  
     margin-bottom: 35px;
+    overflow: hidden;
+    max-height: 70%;
 }

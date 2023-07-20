@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { LetterService } from 'src/app/services/letter.service';
 import { Letter } from 'src/app/shared/types';
 
@@ -7,12 +8,21 @@ import { Letter } from 'src/app/shared/types';
   templateUrl: './letter-list.component.html',
   styleUrls: ['./letter-list.component.scss'],
 })
-export class LetterListComponent {
+export class LetterListComponent implements OnInit, OnDestroy {
   letters: Letter[] = [];
+  subscription: Subscription = new Subscription();
   constructor(private letterService: LetterService) {}
 
   ngOnInit(): void {
-    this.letters = this.letterService.getLetters();
+    this.subscription.add(
+      this.letterService.getLettersObservable().subscribe((letters) => {
+        this.letters = letters;
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   onDelete(event: Event, id: string) {

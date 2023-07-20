@@ -3,10 +3,15 @@
   <ng-container *ngIf="!isPreview">
     <form class="form" [formGroup]="form" (submit)="onSubmit()">
       <div class="form__address-block">
-        <mat-form-field appearance="outline" class="form__address-block-field">
+        <mat-form-field
+          appearance="outline"
+          class="form__address-block-field"
+          hideRequiredMarker
+        >
           <mat-label>Sender address</mat-label>
           <input matInput type="text" formControlName="senderAddress" />
           <mat-error
+            class="form__address-block-error"
             *ngIf="
               form.get('senderAddress').hasError('required') &&
               form.get('senderAddress').touched
@@ -14,7 +19,9 @@
           >
             Sender address is required.
           </mat-error>
-          <mat-error *ngIf="form.get('senderAddress').hasError('maxlength')"
+          <mat-error
+            class="form__address-block-error"
+            *ngIf="form.get('senderAddress').hasError('maxlength')"
             >Maximum length of 100 symbols exceeded.</mat-error
           >
         </mat-form-field>
@@ -33,11 +40,18 @@
         <mat-form-field appearance="outline" class="form__body-block-field">
           <mat-label>Subject (optional)</mat-label>
           <input matInput type="text" formControlName="subject" />
-          <mat-error *ngIf="form.get('subject').hasError('maxlength')">
+          <mat-error
+            class="form__body-block-error"
+            *ngIf="form.get('subject').hasError('maxlength')"
+          >
             Maximum length of 100 symbols exceeded.</mat-error
           >
         </mat-form-field>
-        <mat-form-field appearance="outline" class="form__body-block-field">
+        <mat-form-field
+          appearance="outline"
+          class="form__body-block-field"
+          hideRequiredMarker
+        >
           <mat-label>Body</mat-label>
           <textarea
             class="form__body-block-textarea"
@@ -48,20 +62,25 @@
             cdkTextareaAutosize
           ></textarea>
           <mat-error
+            class="form__body-block-error"
             *ngIf="
               form.get('body').hasError('required') && form.get('body').touched
             "
           >
             Letter body is required.
           </mat-error>
-          <mat-error *ngIf="form.get('footNote').hasError('maxlength')"
-            >Maximum length of 500 symbols exceeded.</mat-error
+          <mat-error
+            class="form__body-block-error"
+            *ngIf="form.get('body').hasError('maxlength')"
+            >Maximum length of 1000 symbols exceeded.</mat-error
           >
         </mat-form-field>
         <mat-form-field appearance="outline" class="form__body-block-field">
           <mat-label>Footnote (optional)</mat-label>
           <input matInput type="text" formControlName="footNote" />
-          <mat-error *ngIf="form.get('footNote').hasError('maxlength')"
+          <mat-error
+            class="form__body-block-error"
+            *ngIf="form.get('footNote').hasError('maxlength')"
             >Maximum length of 100 symbols exceeded.</mat-error
           >
         </mat-form-field>

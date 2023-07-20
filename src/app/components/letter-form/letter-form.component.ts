@@ -28,14 +28,14 @@ export class LetterFormComponent {
     this.form = new FormGroup({
       senderAddress: new FormControl(senderAddress, [
         Validators.required,
-        Validators.maxLength(500),
+        Validators.maxLength(100),
       ]),
       subject: new FormControl(subject, [Validators.maxLength(100)]),
       receiverAddress: new FormControl(receiverAddress),
       blockA: new FormControl(blockA),
       body: new FormControl(body, [
         Validators.required,
-        Validators.maxLength(500),
+        Validators.maxLength(5000),
       ]),
       footNote: new FormControl(footNote, [Validators.maxLength(100)]),
     });

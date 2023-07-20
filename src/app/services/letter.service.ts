@@ -29,6 +29,10 @@ export class LetterService {
     return [...this.letters$.value];
   }
 
+  getLettersObservable() {
+    return this.letters$.asObservable();
+  }
+
   getLetterById(letterId: string) {
     return this.letters$.value.find(({ id }) => id === letterId);
   }

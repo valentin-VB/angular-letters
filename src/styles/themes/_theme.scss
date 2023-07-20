@@ -41,9 +41,10 @@ $bv-blue: (
 // mandatory stuff for theming
 $bv-palette-primary: mat-palette($bv-blue);
 $bv-palette-accent: mat-palette($mat-teal);
+$bv-palette-warn: mat-palette($mat-red);
 
 // include the custom theme components into a theme object
-$bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
+$bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent, $bv-palette-warn);
 
 // include the custom theme object into the angular material theme
 @include angular-material-theme($bv-theme);

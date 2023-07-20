@@ -28,6 +28,12 @@
     width: 100%;
 }
 
+.form__address-block-error,
+.form__body-block-error {
+    text-align: right;
+}
+
+
 
 .form__control-wrapper {
     app-letter-form-control:first-child {

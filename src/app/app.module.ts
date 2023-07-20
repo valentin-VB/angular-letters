@@ -20,6 +20,7 @@ import { LetterPreviewComponent } from './components/letter-preview/letter-previ
 import { LetterFormControlComponent } from './components/letter-form-control/letter-form-control.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LetterListComponent } from './components/letter-list/letter-list.component';
+import { LetterService } from './services/letter.service';
 
 @NgModule({
   declarations: [
