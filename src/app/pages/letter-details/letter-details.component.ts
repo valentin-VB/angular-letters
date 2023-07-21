@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LetterService } from 'src/app/services/letter.service';
 import { Letter } from 'src/app/shared/types';
@@ -9,7 +9,7 @@ import { LetterFormComponent } from 'src/app/components/letter-form/letter-form.
   templateUrl: './letter-details.component.html',
   styleUrls: ['./letter-details.component.scss'],
 })
-export class LetterDetailsComponent {
+export class LetterDetailsComponent implements OnInit {
   letterForm!: LetterFormComponent;
   letterIndex!: number;
   letter!: Letter;

@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DialogData, FormModel } from 'src/app/shared/types';
@@ -8,7 +8,7 @@ import { DialogData, FormModel } from 'src/app/shared/types';
   templateUrl: './form-control-dialog.component.html',
   styleUrls: ['./form-control-dialog.component.scss'],
 })
-export class FormControlDialogComponent {
+export class FormControlDialogComponent implements OnInit {
   form!: FormGroup<FormModel>;
   title: string;
   values: string[];
